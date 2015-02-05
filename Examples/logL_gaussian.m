@@ -21,7 +21,7 @@ function logL = logL_gaussian(data, model, parnames, parvals)
 %         calculated.
 %
 % -------------------------------------------------------------------------
-%           This is the format required by nested_sampler.m.
+%           This is the format required by mcmc_sampler.m.
 % -------------------------------------------------------------------------
 
 % check whether model is a string or function handle

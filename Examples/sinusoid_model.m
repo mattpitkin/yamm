@@ -18,7 +18,7 @@ function y = sinusoid_model(t, parnames, parvals)
 %     parnames
 %
 %--------------------------------------------------------------------------
-%           This is the format required by nested_sampler.m.
+%           This is the format required by mcmc_sampler.m.
 %--------------------------------------------------------------------------
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 

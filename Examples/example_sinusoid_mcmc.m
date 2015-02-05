@@ -12,15 +12,14 @@ t = (0:dt:(tlen-dt))';
 
 % inject a simulated sinusoidal signal model
 amp = 10.0; % signal amplitude
-%amp = 0.;
 phi0 = 2.3; % initial phase of signal (rads)
 f0 = 0.788634; % signal frequency
 f1 = 0;
 f2 = 0;
 f3 = 0;
 f4 = 0;
-%t0 = -1000;
 t0 = 0;
+
 % create signal injection
 s = sinusoid_model(t, ...
     {'amp', 'phi0', 't0', 'f0', 'f1', 'f2', 'f3', 'f4'}, ...
@@ -43,37 +42,17 @@ Nburnin = 50000; % burn in
 
 likelihood = @logL_gaussian;
 model = @sinusoid_model;
-%prior = {'amp', 'uniform', 0, 20, 'fixed'; 'f0', 'uniform', 0.6, 0.95, 'fixed'; 'phi0', 'uniform', 0, 2*pi, 'cyclic'};
-%extraparams = {'t0', t0; 'f1', f1; 'f2', f2; 'f3', f3; 'f4', f4}; % fixed signal freqs
-
 prior = {'amp', 'uniform', 0, 20, 'fixed'; 'phi0', 'uniform', 0, 2*pi, 'cyclic'};
 extraparams = {'f0', f0; 't0', t0; 'f1', f1; 'f2', f2; 'f3', f3; 'f4', f4}; % fixed signal freqs
 
-%temperature = 1/100;
 temperature = 1;
-dimupdate = 0;
 
-% run nested sampling
-%[post_samples, logP] = mcmc_sampler(data, likelihood, model, prior, ...
-%    extraparams, 'Nmcmc', Nmcmc, 'Nburnin', Nburnin, 'temperature', ...
-%    temperature, 'dimupdate', dimupdate, 'propscale', 0.5, ...
-%    'NensembleStretch', 10);
-
+% run MCMC sampler
 [post_samples, logP] = mcmc_sampler(data, likelihood, model, prior, ...
     extraparams, 'Nmcmc', Nmcmc, 'Nburnin', Nburnin, 'temperature', ...
     temperature, 'NensembleStretch', 10);
 
 % plot the samples
-%[nf0, xf0] = histnormbounds(post_samples(:,1), 20, prior{1,3}, prior{1,4});
-%figure;
-%plot(xf0, nf0, 'b', [f0 f0], [0, max(nf0)+0.1*max(nf0)], 'k--');
-%set(gca, 'fontsize', 14, 'fontname', 'helvectica');
-%xlabel('f_0 (Hz)', 'fontsize', 14, 'fontname', 'avantgarde');
-%ylabel('Probability Density', 'fontsize', 14, 'fontname', 'avantgarde');
-
-%fprintf(1, 'Mean and standard deviation of f0 = %.6f +/- %.6f (Hz)\n', ...
-%    mean(post_samples(:,1)), std(post_samples(:,1)));
-
 [namp, xamp] = histnormbounds(post_samples(:,1), 20, prior{1,3}, prior{1,4});
 figure;
 plot(xamp, namp, 'b', [amp amp], [0, max(namp)+0.1*max(namp)], 'k--');
