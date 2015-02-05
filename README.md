@@ -1,5 +1,5 @@
 # yamm
-Yet Another Matlab MCMC code
+## Yet Another Matlab MCMC code
 
 Here is another Matlab (and potentially Octave compatible) code for performing Markov chain Monte Carlo parameter estimation.
 
