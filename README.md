@@ -5,16 +5,30 @@ Here is another Matlab (and potentially Octave compatible) code for performing M
 
 The code can use a variety of proposal functions including the "stretch" and "walk" affine invariant ensemble samplers of [Goodman & Weare](http://msp.org/camcos/2010/5-1/p04.xhtml). It also allows a variety of prior functions (or a user defined function) for the parameters.
 
+## Setup
+
+You can use the code by simply adding the ``src`` directory to your Matlab path, e.g. in ``bash`` in Linux just type
+
+    export MATLABPATH=${MATLABPATH}:path_to_repository/src
+
+Alternatively run the provided ``setup.py`` script with
+
+    . ./setup.sh
+    
+to add the paths to ``MATLABPATH``, or use the ``addpath`` command in Matlab, or just do it through the window options.
+
+If trying this with Octave just set the ``OCTAVEPATH`` environment variable instead, or again use the ``addpath`` command.
+
 ## Example
 
-Here I'll give a couple of examples (well one at the moment) of setting up the likelihood and model functions and the parameters for estimation. The style of the likelihood and model functions given here are how they should be set up in general. Other examples are given in the `Examples` directory.
+Here I'll give a couple of examples (well one at the moment) of setting up the likelihood and model functions and the parameters for estimation. The style of the likelihood and model functions given here are how they should be set up in general. Other examples are given in the ``Examples`` directory.
 
 ### Sinusoid example
 
 An example of running the code for a sinusoidal model and Gaussian likelihood is given here. First let's define the model function. Note that the model function should take three variables:
- 1. a variable, in this case `t` (a vector of time stamps), that could be a single value, vector, or matrix, giving the points at which the model is evaluated;
- 2. a cell array (`parnames`) containing the names of any variables needed to define the model, where the names are recognised by the `switch` statement in the function;
- 3. a cell array (`parvals`) containing the values of each of the variables in `parnames`, which much be included in the same order. 
+ 1. a variable, in this case ``t`` (a vector of time stamps), that could be a single value, vector, or matrix, giving the points at which the model is evaluated;
+ 2. a cell array (``parnames``) containing the names of any variables needed to define the model, where the names are recognised by the ``switch`` statement in the function;
+ 3. a cell array (``parvals``) containing the values of each of the variables in ``parnames``, which much be included in the same order. These variables can be anything - floats, integers, strings, vectors, matrices - as long as the model function knows what to do with them. However, any variables that are being estimated must just be individual real numbers.
 
 ```matlab
 function y = sinusoid_model(t, parnames, parvals)
@@ -46,10 +60,10 @@ y = amp * sin(2*pi*freq*(t-t0) + phi0);
 ```
 
 Now let's define the log likelihood function, which we'll take as a Gaussian with a stationary noise variance. Note that the log likelihood function should take in four variables:
- 1. a `data` variables containing any 'data' information. In this case `data` is a cell array with the first cell containing a vector of time stamps of the data samples, the second cell containing the actual data samples, and the third cell containing the data variance;
- 2. a `model` function (either a function handle or function name string) e.g. the `sinusoid_model` above;
- 3. a cell array `parnames` containing the model parameter names to be passed to the model (as above);
- 4. a cell array `parvals` containing the model parameter values to be passed to the model (as above).
+ 1. a ``data`` variable containing any 'data' information. In this case ``data`` is a cell array with the first cell containing a vector of time stamps of the data samples, the second cell containing the actual data samples, and the third cell containing the data variance, but data could contain any other information required by the likelihood function, provided the likelihood function knows what to do with it;
+ 2. a ``model`` function (either a function handle or function name string) e.g. the ``sinusoid_model`` above;
+ 3. a cell array ``parnames`` containing the model parameter names to be passed to the model (as above);
+ 4. a cell array ``parvals`` containing the model parameter values to be passed to the model (as above).
 
 ```matlab
 function logL = logL_gaussian(data, model, parnames, parvals)
