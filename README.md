@@ -7,7 +7,7 @@ The code can use a variety of proposal functions including the "stretch" and "wa
 
 ## Setup
 
-You can use the code by simply adding the ``src`` directory to your Matlab path, e.g. in ``bash`` in Linux just type
+You can use the code by simply adding the ``src`` directory to your Matlab path, e.g. in ``bash`` in GNU/Linux just type
 
     export MATLABPATH=${MATLABPATH}:path_to_repository/src
 
