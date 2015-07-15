@@ -11,7 +11,7 @@ You can use the code by simply adding the ``src`` directory to your Matlab path,
 
     export MATLABPATH=${MATLABPATH}:path_to_repository/src
 
-Alternatively run the provided ``setup.py`` script with
+Alternatively run the provided ``setup.sh`` script with
 
     . ./setup.sh
     
