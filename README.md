@@ -168,3 +168,5 @@ For Matlab code doing a very similar job see e.g. [The MCMC Hammer](http://www.m
 For similar Matlab-based Bayesian parameter estimation and evidence evaluation you may also want to checkout the [Matlab implementation of MultiNest](http://ccpforge.cse.rl.ac.uk/gf/project/multinest/frs/) (also available on github [here](https://github.com/mattpitkin/matlabmultinest)).
 
 &copy; Matthew Pitkin, 2015
+
+Released under the [MIT License](https://github.com/mattpitkin/yamm/LICENSE)
