@@ -1,7 +1,7 @@
 # yamm
 ## Yet Another Matlab MCMC code
 
-Here is another Matlab (and potentially Octave compatible) code for performing Markov chain Monte Carlo parameter estimation. Other MCMC codes are available.
+Here is another Matlab (and potentially Octave compatible) code for performing Markov chain Monte Carlo parameter estimation. Other MCMC codes are [available](https://github.com/mattpitkin/yamm#alternatives).
 
 The code can use a variety of proposal functions including the "stretch" and "walk" affine invariant ensemble samplers of [Goodman & Weare](http://msp.org/camcos/2010/5-1/p04.xhtml). It also allows a variety of prior functions (or a user defined function) for the parameters.
 
@@ -135,7 +135,7 @@ data{2} = y;
 data{3} = sigma2;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% define nested sampling parameters
+% define MCMC sampling parameters
 Nmcmc = 50000; % MCMC samples
 Nburnin = 50000; % burn in
 
