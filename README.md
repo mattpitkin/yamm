@@ -169,4 +169,4 @@ For similar Matlab-based Bayesian parameter estimation and evidence evaluation y
 
 &copy; Matthew Pitkin, 2015
 
-Released under the [MIT License](https://github.com/mattpitkin/yamm/LICENSE)
+Released under the [MIT License](https://github.com/mattpitkin/yamm/blob/master/LICENSE).
