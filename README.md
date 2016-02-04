@@ -87,7 +87,7 @@ invC = 1/C;
 lDetC = N*log(C);
 
 % evaluate the model
-md = feval(fmodel, x, parnames, parvals);
+md = feval(fmodel, t, parnames, parvals);
 
 % if the model returns a NaN then set the likelihood to be zero (e.g. loglikelihood to be -inf)
 if isnan(md)
@@ -118,7 +118,7 @@ t = (0:dt:(tlen-dt))';
 % inject a simulated sinusoidal signal model
 amp = 10.0; % signal amplitude
 phi0 = 2.3; % initial phase of signal (rads)
-f0 = 0.788634; % signal frequency
+freq = 0.788634; % signal frequency
 t0 = 0; % phase epoch
 
 % create signal injection
