@@ -5,6 +5,8 @@ Here is another Matlab (and potentially Octave compatible) code for performing M
 
 The code can use a variety of proposal functions including the "stretch" and "walk" affine invariant ensemble samplers of [Goodman & Weare](http://msp.org/camcos/2010/5-1/p04.xhtml). It also allows a variety of prior functions (or a user defined function) for the parameters.
 
+**NOTE**: I am no longer actively developing this code myself, but any pull requests will be considered. It may also be worth checking out [GWMCMC](https://github.com/grinsted/gwmcmc) by [@grinsted](https://github.com/grinsted) as an alternative.
+
 ## Setup
 
 You can use the code by simply adding the ``src`` directory to your Matlab path, e.g. in ``bash`` in GNU/Linux just type
