@@ -163,7 +163,7 @@ extraparams = {'freq', freq; ...
 
 ## Alternatives
 
-For Matlab code doing a very similar job see e.g. [The MCMC Hammer](http://www.mathworks.com/matlabcentral/fileexchange/49537-the-mcmc-hammer---affine-invariant-mcmc-sampler) by Aslak Grinsted, the [MCMC toolbox for Matlab](http://helios.fmi.fi/~lainema/mcmc/) by Marko Laine, or look elsewhere on the [Matlab File Exchange](http://www.mathworks.com/matlabcentral/fileexchange/) or [Google](https://www.google.co.uk/#q=matlab+mcmc)! Or, alternatively if you're more into Python (as I am too!) check out [emcee](http://dan.iel.fm/emcee/current/) (as described in Forman-Mackay et al., [arXiv:1202.3665](http://arxiv.org/abs/1202.3665)).
+For Matlab code doing a very similar job see e.g. [GWMCMC](https://github.com/grinsted/gwmcmc) by Aslak Grinsted (@grinsted), the [MCMC toolbox for Matlab](http://helios.fmi.fi/~lainema/mcmc/) by Marko Laine, or look elsewhere on the [Matlab File Exchange](http://www.mathworks.com/matlabcentral/fileexchange/) or [Google](https://www.google.co.uk/#q=matlab+mcmc)! Or, alternatively if you're more into Python (as I am too!) check out [emcee](http://dan.iel.fm/emcee/current/) (as described in Forman-Mackay et al., [arXiv:1202.3665](http://arxiv.org/abs/1202.3665)).
 
 For similar Matlab-based Bayesian parameter estimation and evidence evaluation you may also want to checkout the [Matlab implementation of MultiNest](http://ccpforge.cse.rl.ac.uk/gf/project/multinest/frs/) (also available on github [here](https://github.com/mattpitkin/matlabmultinest)).
 
